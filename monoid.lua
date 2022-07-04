@@ -1,3 +1,5 @@
+local table_is_empty = hand_monoid.util.table_is_empty
+
 hand_monoid.monoid_def = {
 	combine = function(handspec1, handspec2)
 		local handspec = table.copy(handspec1)
@@ -10,7 +12,11 @@ hand_monoid.monoid_def = {
 			elseif k == "groupcaps" then
 				handspec1.groupcaps = handspec1.groupcaps or {}
 				for group, caps in pairs(v) do
-					handspec1.groupcaps[group] = caps
+					if table_is_empty(caps) then
+						handspec1.groupcaps[group] = nil
+					else
+						handspec1.groupcaps[group] = caps
+					end
 				end
 			else
 				handspec[k] = v
@@ -31,8 +37,8 @@ hand_monoid.monoid_def = {
 		full_punch_interval = hand_monoid.settings.full_punch_interval,
 		max_drop_level = hand_monoid.settings.max_drop_level,
 		punch_attack_uses = hand_monoid.settings.punch_attack_uses,
-		groupcaps = hand_monoid.settings.groupcaps,
 		damage_groups = hand_monoid.settings.damage_groups,
+		groupcaps = hand_monoid.settings.groupcaps,
 	},
 	apply = function(handspec, player)
 		local hand_stack = ItemStack(handspec.name or "hand_monoid:hand")
@@ -41,8 +47,8 @@ hand_monoid.monoid_def = {
 			full_punch_interval = handspec.full_punch_interval,
 			max_drop_level = handspec.max_drop_level,
 			punch_attack_uses = handspec.punch_attack_uses,
-			groupcaps = handspec.groupcaps,
 			damage_groups = handspec.damage_groups,
+			groupcaps = handspec.groupcaps,
 		})
 		local inv = player:get_inventory()
 		if inv:get_size("hand") == 0 then
