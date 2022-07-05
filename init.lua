@@ -23,8 +23,7 @@ hand_monoid = {
 	end,
 }
 
-
-hand_monoid.dofile("settings")
 hand_monoid.dofile("util")
+hand_monoid.dofile("settings")
 hand_monoid.dofile("hand")
 hand_monoid.dofile("monoid")
