@@ -26,6 +26,7 @@ stds.hand_monoid = {
 		"hand_monoid",
 	},
 	read_globals = {
+    	"futil",
     	"player_monoids",
 	},
 }

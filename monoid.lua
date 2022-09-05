@@ -1,5 +1,5 @@
 local sort_handspecs = hand_monoid.util.sort_handspecs
-local table_is_empty = hand_monoid.util.table_is_empty
+local table_is_empty = futil.table_is_empty
 
 hand_monoid.monoid_def = {
 	combine = function(handspec1, handspec2)
@@ -52,6 +52,7 @@ hand_monoid.monoid_def = {
 	apply = function(handspec, player)
 		local hand_stack = ItemStack(handspec.name or "hand_monoid:hand")
 		local meta = hand_stack:get_meta()
+
 		meta:set_tool_capabilities({
 			full_punch_interval = handspec.full_punch_interval,
 			max_drop_level = handspec.max_drop_level,
@@ -59,6 +60,7 @@ hand_monoid.monoid_def = {
 			damage_groups = handspec.damage_groups,
 			groupcaps = handspec.groupcaps,
 		})
+
 		local inv = player:get_inventory()
 		if inv:get_size("hand") == 0 then
 			inv:set_size("hand", 1)
@@ -70,7 +72,7 @@ hand_monoid.monoid_def = {
 	end,
 }
 
-hand_monoid.monoid = player_monoids.make_monoid({
+hand_monoid.monoid = (player_monoids.make_monoid or player_monoids.monoid)({
 	combine = function(handspec1, handspec2)
 		return hand_monoid.monoid_def.combine(handspec1, handspec2)
 	end,

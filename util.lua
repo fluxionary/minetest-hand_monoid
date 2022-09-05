@@ -1,16 +1,5 @@
 local util = {}
 
-function util.table_is_empty(t)
-	return next(t) == nil
-end
-
-function util.parse_lua(code)
-	local f = loadstring(("return %s"):format(code))
-	if f then
-		return f()
-	end
-end
-
 function util.sort_handspecs(handspecs)
 	local sorted = {}
 	for _, handspec in pairs(handspecs) do
