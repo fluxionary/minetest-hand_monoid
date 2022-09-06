@@ -2,7 +2,7 @@ local hand_caps = minetest.registered_items[""].tool_capabilities
 
 local s = minetest.settings
 
-local parse_lua = hand_monoid.util.parse_lua
+local parse_lua = futil.parse_lua
 
 hand_monoid.settings = {
 	full_punch_interval = tonumber(s:get("hand_monoid.full_punch_interval")) or hand_caps.full_punch_interval,
