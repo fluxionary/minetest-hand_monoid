@@ -1,5 +1,5 @@
 local sort_handspecs = hand_monoid.util.sort_handspecs
-local table_is_empty = table.is_empty
+local table_is_empty = futil.table.is_empty
 
 hand_monoid.monoid_def = {
 	combine = function(handspec1, handspec2)
