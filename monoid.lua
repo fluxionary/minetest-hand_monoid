@@ -11,18 +11,15 @@ hand_monoid.monoid_def = {
 				for group, damage in pairs(v) do
 					handspec.damage_groups[group] = (handspec.damage_groups[group] or 0) + damage
 				end
-
 			elseif k == "groupcaps" then
 				handspec.groupcaps = handspec.groupcaps or {}
 				for group, caps in pairs(v) do
 					if table_is_empty(caps) then
 						handspec.groupcaps[group] = nil
-
 					else
 						handspec.groupcaps[group] = caps
 					end
 				end
-
 			else
 				handspec[k] = v
 			end
@@ -68,8 +65,7 @@ hand_monoid.monoid_def = {
 		inv:set_stack("hand", 1, hand_stack)
 	end,
 
-	on_change = function(old_total, new_total, player)
-	end,
+	on_change = function(old_total, new_total, player) end,
 }
 
 hand_monoid.monoid = (player_monoids.make_monoid or player_monoids.monoid)({
