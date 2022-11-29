@@ -1,0 +1,14 @@
+# override the default value. defaults to the properties defined for the hand.
+hand_monoid.full_punch_interval (hand full punch interval) float
+
+# override the default value. defaults to the properties defined for the hand.
+hand_monoid.max_drop_level (hand max drop level) int
+
+# override the default value. defaults to the properties defined for the hand.
+hand_monoid.punch_attack_uses (hand punch attack uses) int
+
+# override the default value. defaults to the properties defined for the hand.
+hand_monoid.damage_groups (hand damage groups) string
+
+# override the default value. defaults to the properties defined for the hand.
+hand_monoid.groupcaps (hand groupcaps) string

@@ -1,0 +1,11 @@
+{
+    "type": "MOD",
+    "name": "hand_monoid",
+    "title": "hand_monoid",
+    "short_description": "player monoid for controlling the look and abilities of the player's hand.",
+    "repo": "https://github.com/fluxionary/minetest-hand_monoid.git",
+    "website": "https://github.com/fluxionary/minetest-hand_monoid",
+    "issue_tracker": "https://github.com/fluxionary/minetest-hand_monoid/issues",
+    "license": "AGPL-3.0-or-later",
+    "media_license": "CC-BY-SA-4.0"
+}
